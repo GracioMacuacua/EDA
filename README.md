@@ -1,31 +1,40 @@
-# Sobre o projecto
+# ESTRUTURAS DE DADOS E ALGORITMOS (EDA)
 
-Olá!
+Neste repositório você pode encontrar uma pequena base sobre algumas estruturas e algoritmos relacionados a disciplina.
 
-Meu nome é Grácio Macuácua, desenvolvedor iniciante de sistemas e como se
-pode pensar sobre qualquer desenvolvedor, sou amante de codificação e
-tecnologia.
+Temos neste repositório os seguintes algoritmos:
 
-O presente projecto foi desenvolvido como forma de prática/consolidação da
-matéria estudada na disciplina de Estrutura de Dados e Algoritmos.
+## Ordenação
 
-Dentre os códigos das classes cá existentes, alguns são para classificação
-de arrays unidimensionais de tipo Integer, outros para busca de dados em
-arrays de tipo Integer, alguns resumem-se a exercícios resolvidos sobre
-recursividade em Java e  alguns outros são sobre algumas estruturas de
-dados genéricas como a Pilha (Stack), a Fila (Queue), a
-Lista Ligada/Encadeada (LinkedList) e a Lista Duplamente Ligada/Duplamente
-Encadeada (Doubly LinkedList) e a Lista Circular Duplamente Encadeada
-(Circular Doubly LinkedList).
+- Bubble Sort;
+- Insertion Sort
+- Merge Sort;
+- Quick Sort;
+- Selection Sort.
 
-Por agora, uma parte do que tenho a oferecer sobre esta disciplina é o que
-você pode encontrar aqui.
+## Pesquisa
 
-Nas versões por vir, melhorias de desempenho e qualidade serão implementadas.
+- Busca binária simples;
+- Busca binária com uso do conceito de recursividade;
+- Busca sequencial simples;
+- Busca sequencial com uso do conceito de recursivadade.
 
-Como conhecimento e ajuda são bem vindos, aceito contribuições de todos os
-desenvolvedores que quiserem ajudar a melhorar este projecto em qualidade e
-dimensão através do meu GitHub pessoal:
-<https://github.com/GracioMacuacua/EDA>
+## Estruturas de dados
 
-## LET's CODE
+- Filas (Queue):
+  - Com uso de ArrayList;
+  - Sem uso de ArrayList.
+- Listas:
+  - Circular;
+  - Duplamente ligada;
+  - Simples.
+- Pilhas (Stack):
+  - Com uso de ArrayList;
+  - Sem uso de ArrayList.
+
+Pode também encontrar alguns exercícios resolvidos sobre recursividade.
+
+Sinta-se a vontade para fazer as melhorias e adições que achar necessárias.
+Sem muito mais a dizer, espero que tenha te ajudado de alguma forma.
+
+### Aproveite

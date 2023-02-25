@@ -5,6 +5,12 @@ package src.pesquisa;
  */
 public class BuscaBinariaSimples {
     
+    /**
+     * Método que realiza a busca sequencial no vetor.
+     * @param vetor o vetor alvo da busca
+     * @param chave o valor que se procura no vetor.
+     * @return a posição do elemento que se procura caso ele exista no vetor.
+     */
     public static int binariaSimples(int[] vetor, int chave) {
         
         int topo = vetor.length-1;

@@ -6,10 +6,10 @@ import src.estruturasdedados.pilha.Stack;
  * @author Grácio Macuácua
  */
 public class Pilha<T> implements Stack<T> {
-    
+
     private int posPilha;
     private T[] elementos;
- 
+
     @SuppressWarnings("unchecked")
     public Pilha(int capacidade) {
         elementos = (T[]) new Comparable[capacidade];
@@ -18,9 +18,9 @@ public class Pilha<T> implements Stack<T> {
 
     @Override
     public void push(T obj) {
-        if(!estaCheia())
+        if (!estaCheia())
             elementos[++posPilha] = obj;
-        else{
+        else {
             duplicarCapacidade();
             elementos[++posPilha] = obj;
             System.out.println("Capacidade duplicada: " + elementos.length);
@@ -29,23 +29,23 @@ public class Pilha<T> implements Stack<T> {
 
     @SuppressWarnings("unchecked")
     private void duplicarCapacidade() {
-       T[] array = (T[]) new Comparable[2*tamanho()];
-       for(int i = 0; i < tamanho(); i++){
-          array[i] = elementos[i];
-       }
-       elementos = array;       
+        T[] array = (T[]) new Comparable[2 * tamanho()];
+        for (int i = 0; i < tamanho(); i++) {
+            array[i] = elementos[i];
+        }
+        elementos = array;
     }
 
     @Override
     public T pop() {
-        if(estaVazia())
-            throw new  IndexOutOfBoundsException("A pilha está vazia!");
+        if (estaVazia())
+            throw new IndexOutOfBoundsException("A pilha está vazia!");
         return elementos[posPilha--];
     }
 
     @Override
     public int tamanho() {
-        return posPilha+1;
+        return posPilha + 1;
     }
 
     @Override
@@ -55,26 +55,26 @@ public class Pilha<T> implements Stack<T> {
 
     @Override
     public T peek() {
-        if(estaVazia())
-           throw new IndexOutOfBoundsException("A pilha está vazia!");
+        if (estaVazia())
+            throw new IndexOutOfBoundsException("A pilha está vazia!");
         return elementos[posPilha];
     }
-    
+
     public boolean estaCheia() {
-        return posPilha == elementos.length-1;        
+        return posPilha == elementos.length - 1;
     }
 
     @SuppressWarnings("unchecked")
     public void adicionaPilha(Pilha<T> pilha) {
         int tamanho = pilha.tamanho();
-        if(tamanho == 0)
+        if (tamanho == 0)
             return;
-        else if(tamanho() + pilha.tamanho() <= elementos.length) {
-            for(int i = 0; i < tamanho; i++)
+        else if (tamanho() + pilha.tamanho() <= elementos.length) {
+            for (int i = 0; i < tamanho; i++)
                 push(pilha.pop());
         } else {
             T[] aux = (T[]) new Comparable[tamanho() + pilha.tamanho()];
-            for(int i = 0; i < elementos.length; i++)
+            for (int i = 0; i < elementos.length; i++)
                 aux[i] = elementos[i];
             elementos = aux;
             adicionaPilha(pilha);
@@ -85,15 +85,30 @@ public class Pilha<T> implements Stack<T> {
     public String toString() {
         StringBuilder string = new StringBuilder();
         string.append("[");
-        if(!estaVazia()){
+        if (!estaVazia()) {
             string.append(elementos[posPilha]);
-            for(int i = posPilha-1; i >= 0; i--) {
+            for (int i = posPilha - 1; i >= 0; i--) {
                 string.append(",");
                 string.append(elementos[i]);
             }
         }
         string.append("]");
-            return string.toString();
+        return string.toString();
+    }
+
+    @SuppressWarnings("unchecked")
+    public void removerCentral() {
+        if (estaVazia())
+            throw new NullPointerException("A pilha está vazia!");
+        T[] aux = (T[]) new Object[tamanho() - 1];
+        int meio = tamanho() / 2;
+        for (int i = 0; i < meio; i++)
+            aux[i] = elementos[i];
+        for (int i = (meio + 1); i < elementos.length; i++)
+            aux[i-1] = elementos[i];
+        
+        elementos = aux;
+        posPilha = aux.length - 2;
     }
 
 }
